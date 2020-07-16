@@ -17,3 +17,13 @@ HTTPS：
 HTTPS并不能防DNS劫持域名解析，假设运营商劫持了域名解析，浏览器由于证书校验不通过，假站点返回的内容也不能正常展示，所以劫持没有收益。只要不随意信任来源不明的证书，就能从功能上防DNS劫持。
 
 HTTPS可以防流量劫持，因为内容是加密的。
+
+## 防御 XSS 及 http劫持，更多的还是得依靠升级 https 和 CSP/CSP2(内容安全策略) 等非 JavaScript 技术，高明的攻击者可以绕过任何 JavaScript 防护。
+
+# xss 攻击
+所有内联 on* 事件执行的代码
+a标签 href 属性 javascript: 内嵌的代码
+静态脚本、iframe 等恶意内容
+动态添加的脚本文件、iframe 等恶意内容
+document-write添加的内容
+页面被 iframe 嵌套劫持
