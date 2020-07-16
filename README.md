@@ -39,4 +39,19 @@ document-write添加的内容
 参考：https://zhuanlan.zhihu.com/p/96826532
 
 # CSRF （Cross-site request forgery），中文名称：跨站请求伪造
+
+CSRF攻击与XSS攻击不同，CSRF攻击不会往页面内注入恶意脚本，因此黑客是无法通过CSRF攻击来获取用户页面数据的，所以主要由服务器来做预防。
+
+主要有以下几种方式：
+
+充分利用好cookie的SameSite属性
+
+SameSite选项通常由Strict、Lax和None三个值
+
+Strict最为严格，如果cookie设置了Strict，那么浏览器会完全禁止第三方Cookie。
+
+Lax相对宽松一点，在跨站点的情况下，从第三方站点的链接打开和从第三方站点提交Get的表单都会携带cookie.但是如果在第三方站点中使用Post方法或者通过img、iframe等标签加载的URL,都不会携带Cookie。
+
+None, 任何情况下都会发送Cookie。
+
 参考：https://zhuanlan.zhihu.com/p/98062456
